@@ -4,7 +4,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Sail&display=swap" rel="stylesheet">
 
 <body style="background-image:url('https://i.postimg.cc/x1ZZNrtQ/pinkflame.jpg'); background-repeat: no-repeat; background-size: cover !important; margin:0;">
-<img align=right src=https://i.postimg.cc/nzwGhsjQ/Zaou-Ryuu15.png width=auto height=100% style="">
+<img align=right src=https://i.postimg.cc/6QqsPDHX/Yuri-V3-preview-rev-1.png width=auto height=100% style="margin-right:-200px;transition: 5s;">
 <br>
 <br>
 <br>
@@ -27,9 +27,14 @@ The flame of love &hearts;
 
 $(document).ready(function(){
  //$('img').fadeout();
- $('img').hide();
+ /*$('img').hide();
 $('img').fadeIn(3000);
 $('font').hide();
+$('font').fadeTo(3000, 1.0);*/
+$('img').hide();
+$('font').hide();
+$('img').animate({"margin-right": '+=200'}, 1000);
+$('img').fadeTo(3000, 1.0);
 $('font').fadeTo(3000, 1.0);
 
 
