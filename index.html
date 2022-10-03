@@ -3,7 +3,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Sail&display=swap" rel="stylesheet">
 
-<body style="background-image:url('https://i.postimg.cc/x1ZZNrtQ/pinkflame.jpg'); background-repeat: no-repeat; background-size: cover !important; margin:0;">
+<body style="background-image:url('https://i.postimg.cc/x1ZZNrtQ/pinkflame.jpg'); background-repeat: no-repeat; background-size: cover !important; margin:0; overflow: hidden;">
 <img align=right src=https://i.postimg.cc/6QqsPDHX/Yuri-V3-preview-rev-1.png width=auto height=100% style="margin-right:-200px;transition: 0s;    position: absolute;
     opacity: 1;
     z-index: -1;">
@@ -38,9 +38,9 @@ $('font').fadeTo(3000, 1.0);
 
 
 
-var colour="#ffd700"; // "random" can be replaced with any valid colour ie: "red"...
+var colour="toggle"; // "random" can be replaced with any valid colour ie: "red"...
 var sparkles=100;// increase of decrease for number of sparkles falling
-
+var tglclr='#ffd700'
 var x=ox=400;
 var y=oy=300;
 var swide=800;
@@ -55,7 +55,7 @@ var tinyx=new Array();
 var tinyy=new Array();
 var tinyv=new Array();
 
-colours=new Array('#ffd700','#ffd700','#ffd700','#ffd700','#ffd700','#ffd700','#ffd700','#ffd700','ffd700')
+colours=new Array('#ffd700','#ffffcc','#ffd700','#ffffcc','#ffd700','#ffffcc','#ffd700','#ffffcc','ffd700')
 
 n = 10;
 y = 0;
@@ -162,7 +162,7 @@ function sparkle() {
 			star[c].style.left=(starx[c]=x)+"px";
 			star[c].style.top=(stary[c]=y+1)+"px";
 			star[c].style.clip="rect(0px, 5px, 5px, 0px)";
-			star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
+			star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="toggle")?ToggleColour():colour;
 			star[c].style.visibility="visible";
 			starv[c]=50;
 			break;
@@ -296,6 +296,16 @@ function newColour() {
 	c[2]=Math.floor(Math.random()*(256-c[1]/2));
 	c.sort(function(){return (0.5 - Math.random());});
 	return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
+}
+
+function ToggleColour() {
+	if(tglclr=='#ffd700'){
+    	tglclr='#ffffcc'
+    }
+    else{
+    	tglclr='#ffd700'
+    }
+	return tglclr;
 }
 // ]]>
 
